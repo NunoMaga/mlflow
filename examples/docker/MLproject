@@ -1,4 +1,4 @@
-name: k8s-example #this will determine the name of the docker image mlflow creates
+name: k8s-example2 #this will determine the name of the docker image mlflow creates
 
 docker_env:
   image: localhost:5000/docker-example-base # must be the same as the image created locally
@@ -8,4 +8,4 @@ entry_points:
     parameters:
       alpha: float
       l1_ratio: {type: float, default: 0.1}
-    command: "python train.py --alpha {alpha} --l1-ratio {l1_ratio}"
+    command: "python --version"
