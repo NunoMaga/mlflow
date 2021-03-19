@@ -49,6 +49,20 @@ if __name__ == "__main__":
     alpha = float(args.alpha)
     l1_ratio = float(args.l1_ratio)
 
+
+
+
+    # Required env to be set before run is started
+
+    os.environ['MLFLOW_RUN_ID'] = ''
+    os.environ['MLFLOW_TRACKING_URI'] = 'http://lumada-ml-model-lifecycle-mlflow.shared-services.svc.cluster.local:5000'
+    os.environ['MLFLOW_EXPERIMENT_ID'] = '8'
+    os.environ['MLFLOW_S3_ENDPOINT_URL'] = 'http://minio.minio.svc.cluster.local:9000/'
+    os.environ['AWS_ACCESS_KEY_ID'] = 'xDYfNdxbIf0xtxLWWcEm'
+    os.environ['AWS_SECRET_ACCESS_KEY'] = 'MPffox8CeaWc6CwGpouEbHYzF03HwR12OayeRlWg'
+        
+    mlflow.set_experiment("diabetes1")
+
     with mlflow.start_run():
         lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
         lr.fit(train_x, train_y)

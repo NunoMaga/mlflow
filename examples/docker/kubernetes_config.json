@@ -1,5 +1,5 @@
 {
-    "kube-context": "docker-desktop",
+    "kube-context": "gke_hv-gcp-trycatalog_us-central1-c_magikarp-cluster", 
     "kube-job-template-path": "kubernetes_job_template.yaml",
-    "repository-uri": "localhost:5000/k8s-example2"
+    "repository-uri": "us.gcr.io/hv-gcp-trycatalog/mlaas/AutoDEPPA2/AutoDEPPA2-runnable"
 }

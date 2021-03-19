@@ -1,11 +1,15 @@
-name: k8s-example2 #this will determine the name of the docker image mlflow creates
+# this will determine the name of the docker image mlflow creates
+
+name: AutoDEPPA2-runnable
 
 docker_env:
-  image: localhost:5000/docker-example-base # must be the same as the image created locally
+  
+  # must be the same as the image created locally             
+  image: us.gcr.io/hv-gcp-trycatalog/mlaas/AutoDEPPA2/AutoDEPPA2-base
 
 entry_points:
   main:
     parameters:
       alpha: float
       l1_ratio: {type: float, default: 0.1}
-    command: "python --version"
+    command: "python train.py --alpha {alpha} --l1-ratio {l1_ratio}"
